@@ -39,6 +39,4 @@ To run the server, use any of the following scripts:
 - To empty and then repopulate the database with the data from /src/data/userData.json:
   `npm run data:import`
 # Cats-Inventory
-<img width="1728" alt="Screenshot 2025-01-19 at 9 19 31 PM" src="https://github.com/user-attachments/assets/eaad511c-fa7b-4847-9a32-aa3468677767" />
-entory
-
+<img width="1600" alt="Screenshot 2025-01-19 at 10 26 05 PM" src="https://github.com/user-attachments/assets/e8badc0d-352a-4fcc-a000-b74e2bdddd3d" />
