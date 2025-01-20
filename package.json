@@ -1,0 +1,37 @@
+{
+  "name": "cats-inventory",
+  "version": "0.1.0",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "cra-template": "1.2.0",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "postgres": "^3.4.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-scripts": "5.0.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "concurrently": "^9.1.2",
+    "debug": "^4.4.0",
+    "dotenv": "^16.4.7",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "data:import": "node backend/seeder.js",
+    "server": "node backend/server.js",
+    "dev": "DEBUG=app:* nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  }
+}
