@@ -38,3 +38,4 @@ To run the server, use any of the following scripts:
   `npm run server`
 - To empty and then repopulate the database with the data from /src/data/userData.json:
   `npm run data:import`
+# Cats-Inventory
