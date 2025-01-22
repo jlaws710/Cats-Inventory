@@ -2,28 +2,23 @@
  * Seeder file to populate database
  */
 
-//import dependencies
-const path = require('path'); //helps us find our file easily
-const fs = require('fs').promises; //helps us get access to promises when dealing with seeding data into our database
+const path = require('path');
+const fs = require('fs').promises;
 const color = require('colors');
 
-//import our database [x]
-//import the model that we are trying to import our data into [x]
+const db = require('./src/db');
+const Cat = require('./src/model/Cat.js');
 
-const db = require('./src/db'); //Check the file path
-
-const Cat = require('./src/model/Cat.js'); //Check the file path of this model
-
-//write our seed function -> take our json file, create rows with our data into it
+//seed function -> take json file, create rows with our data into it
 const seed = async () => {
   try {
     await db.sync({ force: true }); // clear out database + tables
     const catSeedPath = path.join(__dirname, 'src', 'data', 'catData.json'); //gets the path to userData.json
     //asynchronously reads the content in this file
     const catBuffer = await fs.readFile(catSeedPath);
-    // First we convert the data from buffer into a string, then we parse the JSON so it converts from string -> object
+    // converts the data from buffer into a string, then we parse the JSON so it converts from string -> object
     const catsData  = JSON.parse(String(catBuffer));
-    //creates Show and puts it into our Show table
+    
     const CatPromises = catsData.map((cat) => Cat.create({
       weight: cat.weight.imperial,
       cat_id: cat.id,
